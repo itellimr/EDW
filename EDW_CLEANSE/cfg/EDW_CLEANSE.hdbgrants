@@ -1,0 +1,14 @@
+{
+  "consumed-db-EDW_STAGE": {
+     "object_owner": {
+           "container_roles": [
+               "EDW.EDW_STAGE.ROLES::Role_R1#"
+           ]
+     },
+     "application_user": {
+           "container_roles": [
+               "EDW.EDW_STAGE.ROLES::Role_R1"
+           ]
+     }
+  }
+}

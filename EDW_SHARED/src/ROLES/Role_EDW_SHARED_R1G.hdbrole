@@ -1,0 +1,22 @@
+{ 
+  "role": { 
+    "name": "EDW.EDW_SHARED.ROLES::Role_EDW_SHARED_R1#", 
+    "object_privileges": [ 
+      { 
+        "name":"EDW.EDW_SHARED.MODEL::CV_SHARED_DIM_PRODUCT", 
+        "type":"VIEW", 
+        "privileges_with_grant_option":[ "SELECT" ] 
+      },
+      { 
+        "name":"EDW.EDW_SHARED.MODEL::CV_SHARED_DIM_CUSTOMER", 
+        "type":"VIEW", 
+        "privileges_with_grant_option":[ "SELECT" ] 
+      },
+      { 
+        "name":"EDW.EDW_SHARED.MODEL::CV_SHARED_DIM_DATE", 
+        "type":"VIEW", 
+        "privileges_with_grant_option":[ "SELECT" ] 
+      }
+    ]
+  }
+} 

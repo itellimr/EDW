@@ -1,0 +1,26 @@
+{
+  "consumed-db-EDW_CLEANSE": {
+     "object_owner": {
+           "container_roles": [
+               "EDW.EDW_CLEANSE.ROLES::Role_EDW_CLEANSE_R1#"
+           ]
+     },
+     "application_user": {
+           "container_roles": [
+               "EDW.EDW_CLEANSE.ROLES::Role_EDW_CLEANSE_R1"
+           ]
+     }
+  },
+    "consumed-db-EDW_SHARED": {
+     "object_owner": {
+           "container_roles": [
+               "EDW.EDW_SHARED.ROLES::Role_EDW_SHARED_R1#"
+           ]
+     },
+     "application_user": {
+           "container_roles": [
+               "EDW.EDW_SHARED.ROLES::Role_EDW_SHARED_R1"
+           ]
+     }
+  }
+}

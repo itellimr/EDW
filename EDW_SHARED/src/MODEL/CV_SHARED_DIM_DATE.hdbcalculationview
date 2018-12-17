@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" xmlns:Dimension="http://www.sap.com/ndb/BiModelDimension.ecore" id="EDW.EDW_SHARED.MODEL::CV_SHARED_DIM_DATE" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="TIME" schemaVersion="3.0" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
+<descriptions defaultDescription="CV_SHARED_DIM_DATE"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EDW.EDW_SHARED.SYNONYMS::CLEANSE_CV_CLN_DATE">
+    <resourceUri>EDW.EDW_SHARED.SYNONYMS::CLEANSE_CV_CLN_DATE</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews/>
+<inlineHierarchy xsi:type="Dimension:LeveledHierarchy" id="CALENDER_HIERARCHY" aggregateAllNodes="true" orphanedNodesHandling="ROOT_NODES" rootNodeVisibility="ADD_ROOT_NODE" withRootNode="true" nodeStyle="LEVEL_NAME_ENFORCED" cacheEnabled="true" cycleHandling="BREAKUP" emptyValueIsNull="true">
+  <descriptions defaultDescription="CALENDER_HIERARCHY"/>
+  <unassignedMemberProperties mode="FALSE"/>
+  <levels>
+    <level levelAttribute="YEAR" levelType="MDLEVEL_TYPE_REGULAR" order="1" orderAttribute="YEAR" sortDirection="ASC"/>
+    <level levelAttribute="MONTH_NUMBER" levelType="MDLEVEL_TYPE_REGULAR" order="2" orderAttribute="MONTH_NUMBER" sortDirection="ASC"/>
+    <level levelAttribute="DATE" levelType="MDLEVEL_TYPE_REGULAR" order="3" orderAttribute="DATE" sortDirection="ASC"/>
+  </levels>
+</inlineHierarchy>
+<logicalModel id="EDW.EDW_SHARED.SYNONYMS::CLEANSE_CV_CLN_DATE">
+  <attributes>
+    <attribute id="DATE_ID" order="1" descriptionColumnName="DATE_ID" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DATE_ID"/>
+      <keyMapping columnObjectName="CLEANSE_CV_CLN_DATE" columnName="DATE_ID"/>
+    </attribute>
+    <attribute id="DATE" order="2" semanticType="date" descriptionColumnName="DATE" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DATE"/>
+      <keyMapping columnObjectName="CLEANSE_CV_CLN_DATE" columnName="DATE"/>
+    </attribute>
+    <attribute id="DAY_NUMBER" order="3" descriptionColumnName="DAY_NUMBER" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DAY_NUMBER"/>
+      <keyMapping columnObjectName="CLEANSE_CV_CLN_DATE" columnName="DAY_NUMBER"/>
+    </attribute>
+    <attribute id="DAY_NAME" order="4" descriptionColumnName="DAY_NAME" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DAY_NAME"/>
+      <keyMapping columnObjectName="CLEANSE_CV_CLN_DATE" columnName="DAY_NAME"/>
+    </attribute>
+    <attribute id="MONTH_NUMBER" order="5" descriptionColumnName="MONTH_NAME" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MONTH_NUMBER"/>
+      <keyMapping columnObjectName="CLEANSE_CV_CLN_DATE" columnName="MONTH_NUMBER"/>
+    </attribute>
+    <attribute id="MONTH_NAME" order="6" descriptionColumnName="MONTH_NAME" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MONTH_NAME"/>
+      <keyMapping columnObjectName="CLEANSE_CV_CLN_DATE" columnName="MONTH_NAME"/>
+    </attribute>
+    <attribute id="YEAR" order="7" descriptionColumnName="YEAR" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="YEAR"/>
+      <keyMapping columnObjectName="CLEANSE_CV_CLN_DATE" columnName="YEAR"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="100" y="105"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

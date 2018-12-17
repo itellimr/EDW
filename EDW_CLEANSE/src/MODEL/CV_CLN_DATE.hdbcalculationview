@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EDW.EDW_CLEANSE.MODEL::CV_CLN_DATE" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
+<descriptions defaultDescription="CV_CLN_DATE"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EDW.EDW_CLEANSE.SYNONYMS::STAGE_DATE">
+    <resourceUri>EDW.EDW_CLEANSE.SYNONYMS::STAGE_DATE</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews/>
+<logicalModel id="EDW.EDW_CLEANSE.SYNONYMS::STAGE_DATE">
+  <attributes>
+    <attribute id="DATE_ID" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DATE_ID"/>
+      <keyMapping columnObjectName="STAGE_DATE" columnName="DATE_ID"/>
+    </attribute>
+    <attribute id="DATE" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DATE"/>
+      <keyMapping columnObjectName="STAGE_DATE" columnName="DATE"/>
+    </attribute>
+    <attribute id="DAY_NUMBER" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DAY_NUMBER"/>
+      <keyMapping columnObjectName="STAGE_DATE" columnName="DAY_NUMBER"/>
+    </attribute>
+    <attribute id="DAY_NAME" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DAY_NAME"/>
+      <keyMapping columnObjectName="STAGE_DATE" columnName="DAY_NAME"/>
+    </attribute>
+    <attribute id="MONTH_NUMBER" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MONTH_NUMBER"/>
+      <keyMapping columnObjectName="STAGE_DATE" columnName="MONTH_NUMBER"/>
+    </attribute>
+    <attribute id="MONTH_NAME" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MONTH_NAME"/>
+      <keyMapping columnObjectName="STAGE_DATE" columnName="MONTH_NAME"/>
+    </attribute>
+    <attribute id="YEAR" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="YEAR"/>
+      <keyMapping columnObjectName="STAGE_DATE" columnName="YEAR"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

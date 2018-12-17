@@ -1,0 +1,26 @@
+{
+  "EDW.EDW_CLEANSE.SYNONYMS::STAGE_PRODUCT": {
+    "target": {
+      "object": "EDW.EDW_STAGE.DATA::STAGE.PRODUCT",
+      "schema": "EDW_HDI_EDW_STAGE_1"
+    }
+  },
+  "EDW.EDW_CLEANSE.SYNONYMS::STAGE_DATE": {
+    "target": {
+      "object": "EDW.EDW_STAGE.DATA::STAGE.DATE",
+      "schema": "EDW_HDI_EDW_STAGE_1"
+    }
+  },
+  "EDW.EDW_CLEANSE.SYNONYMS::STAGE_CUSTOMER": {
+    "target": {
+      "object": "EDW.EDW_STAGE.DATA::STAGE.CUSTOMER",
+      "schema": "EDW_HDI_EDW_STAGE_1"
+    }
+  },
+  "EDW.EDW_CLEANSE.SYNONYMS::TBL_SALES": {
+    "target": {
+      "object": "EDW.EDW_STAGE.TABLES::SALES.TBL_SALES",
+      "schema": "EDW_HDI_EDW_STAGE_1"
+    }
+  }
+}

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EDW.EDW_DM_SALES.MODEL::CV_DM_SALES_SALES" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
+<descriptions defaultDescription="CV_DM_SALES_SALES"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EDW.EDW_DM_SALES.SYNONYMS::CLEANSE_CV_CLN_SALES">
+    <resourceUri>EDW.EDW_DM_SALES.SYNONYMS::CLEANSE_CV_CLN_SALES</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+    <viewAttributes>
+      <viewAttribute id="DATE_ID">
+        <descriptions defaultDescription="DATE_ID"/>
+      </viewAttribute>
+      <viewAttribute id="PRODUCT_ID">
+        <descriptions defaultDescription="PRODUCT_ID"/>
+      </viewAttribute>
+      <viewAttribute id="CUSTOMER_ID">
+        <descriptions defaultDescription="CUSTOMER_ID"/>
+      </viewAttribute>
+      <viewAttribute id="SALES_VALUE">
+        <descriptions defaultDescription="SALES_VALUE"/>
+      </viewAttribute>
+      <viewAttribute id="SALES_QTY">
+        <descriptions defaultDescription="SALES_QTY"/>
+      </viewAttribute>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <restrictedViewAttributes/>
+    <input node="EDW.EDW_DM_SALES.SYNONYMS::CLEANSE_CV_CLN_SALES">
+      <mapping xsi:type="Calculation:AttributeMapping" target="DATE_ID" source="DATE_ID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCT_ID" source="PRODUCT_ID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CUSTOMER_ID" source="CUSTOMER_ID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SALES_VALUE" source="SALES_VALUE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SALES_QTY" source="SALES_QTY"/>
+    </input>
+  </calculationView>
+</calculationViews>
+<logicalModel id="Projection_1">
+  <attributes>
+    <attribute id="DATE_ID" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DATE_ID"/>
+      <keyMapping columnObjectName="Projection_1" columnName="DATE_ID"/>
+    </attribute>
+    <attribute id="PRODUCT_ID" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PRODUCT_ID_1"/>
+      <keyMapping columnObjectName="Projection_1" columnName="PRODUCT_ID"/>
+    </attribute>
+    <attribute id="CUSTOMER_ID" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CUSTOMER_ID"/>
+      <keyMapping columnObjectName="Projection_1" columnName="CUSTOMER_ID"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures>
+    <measure id="SALES_VALUE" order="4" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="SALES_VALUE"/>
+      <measureMapping columnObjectName="Projection_1" columnName="SALES_VALUE"/>
+    </measure>
+    <measure id="SALES_QTY" order="5" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="SALES_QTY"/>
+      <measureMapping columnObjectName="Projection_1" columnName="SALES_QTY"/>
+    </measure>
+  </baseMeasures>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+  <localDimensions/>
+  <sharedDimensions/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="90" y="227"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Projection_1" modelObjectNameSpace="StarJoinViewNodeInput" modelObjectType="repository">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

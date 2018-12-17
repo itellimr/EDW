@@ -1,0 +1,9 @@
+PRODUCT_ID,PRODUCT_NAME,PRODUCT_GROUP,PRODUCT_CATEGORY
+P1,Apple,Fruit,Food
+P2,Pear,Fruit,Food
+P3,Banana,Fruit,Food
+P4,Chair,Furniture,HouseHold
+P5,Table,Furniture,HouseHold
+P6,Carrot,Vegetable,Food
+P7,Potato,Vegetable,Food
+P8,Sprout,Vegetable,Food

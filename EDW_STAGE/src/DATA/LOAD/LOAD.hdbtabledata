@@ -1,0 +1,111 @@
+{
+    "format_version": 1,
+    "imports": [
+    	{
+			 "target_table": "EDW.EDW_STAGE.DATA::STAGE.CUSTOMER",
+			 "source_data": {
+    			"data_type": "CSV",
+    			"file_name": "EDW.EDW_STAGE.DATA.LOAD::Customer.csv",
+    			"has_header": true,
+       			"no_data_import": false,
+    			"delete_existing_foreign_data": false,
+    			"type_config": {"delimiter": ","}
+			},
+			"column_mappings": {
+    			"CUSTOMER_ID": 1,
+    			"CUSTOMER_NAME": 2,
+    			"CUSTOMER_CITY": 3
+			},			
+			 "import_settings": {
+			    "import_columns": [
+			    "CUSTOMER_ID",
+			    "CUSTOMER_NAME",
+			    "CUSTOMER_CITY"
+			    ]
+			  }
+		},
+    	{
+			 "target_table": "EDW.EDW_STAGE.DATA::STAGE.PRODUCT",
+			 "source_data": {
+    			"data_type": "CSV",
+    			"file_name": "EDW.EDW_STAGE.DATA.LOAD::Product.csv",
+    			"has_header": true,
+    			"no_data_import": false,
+    			"delete_existing_foreign_data": false,
+    			"type_config": {"delimiter": ","}
+			},
+			"column_mappings": {
+    			"PRODUCT_ID": 1,
+    			"PRODUCT_NAME": 2,
+    			"PRODUCT_GROUP": 3,
+    			"PRODUCT_CATEGORY": 4    			
+			},			
+			 "import_settings": {
+			    "import_columns": [
+			    "PRODUCT_ID",
+			    "PRODUCT_NAME",
+			    "PRODUCT_GROUP",
+			    "PRODUCT_CATEGORY"
+			    ]
+			  }
+		},
+		{
+			 "target_table": "EDW.EDW_STAGE.TABLES::SALES.TBL_SALES",
+			 "source_data": {
+    			"data_type": "CSV",
+    			"file_name": "EDW.EDW_STAGE.DATA.LOAD::Sales.csv",
+    			"has_header": true,
+    			"no_data_import": false,
+    			"delete_existing_foreign_data": false,
+    			"type_config": {"delimiter": ","}
+			},
+			"column_mappings": {
+    			"DATE_ID": 1, 
+    			"PRODUCT_ID": 2,
+    			"CUSTOMER_ID": 3,
+    			"SALES_VALUE": 4,
+    			"SALES_QTY": 5    			
+			},			
+			 "import_settings": {
+			    "import_columns": [
+			    "DATE_ID",
+			    "PRODUCT_ID",
+			    "CUSTOMER_ID",
+			    "SALES_VALUE",
+			    "SALES_QTY"
+			    ]
+			  }
+		},
+		{
+			 "target_table": "EDW.EDW_STAGE.DATA::STAGE.DATE",
+			 "source_data": {
+    			"data_type": "CSV",
+    			"file_name": "EDW.EDW_STAGE.DATA.LOAD::Date.csv",
+    			"has_header": true,
+    			"no_data_import": false,
+    			"delete_existing_foreign_data": false,
+    			"type_config": {"delimiter": ","}
+			},
+			"column_mappings": {
+				"DATE_ID": 1,
+				"DATE": 2,
+				"DAY_NUMBER": 3,
+				"DAY_NAME": 4,
+				"MONTH_NUMBER": 5,
+				"MONTH_NAME": 6,
+				"YEAR": 7    			
+			},			
+			 "import_settings": {
+			    "import_columns": [
+			    "DATE_ID",
+			    "DATE",
+			    "DAY_NUMBER",
+			    "DAY_NAME",
+			    "MONTH_NUMBER",
+			    "MONTH_NAME",
+			    "YEAR"
+			    ]
+			  }
+		}
+	]
+}

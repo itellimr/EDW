@@ -1,0 +1,30 @@
+namespace EDW.EDW_STAGE.DATA;
+
+/*@@layout{"layoutInfo":{"x":-533,"y":-154.5}}*/
+context STAGE {
+    /*@@layout{"layoutInfo":{"x":-465,"y":-73}}*/
+    entity PRODUCT {
+        key PRODUCT_ID       : String(10) not null;
+            PRODUCT_NAME     : String(50);
+            PRODUCT_GROUP    : String(50);
+            PRODUCT_CATEGORY : String(10);
+    };
+
+    /*@@layout{"layoutInfo":{}}*/
+    entity CUSTOMER {
+        key CUSTOMER_ID   : String(10) not null;
+            CUSTOMER_NAME : String(20);
+            CUSTOMER_CITY : String(20);
+    };
+
+    /*@@layout{"layoutInfo":{}}*/
+    entity DATE {
+        key DATE_ID      : Integer not null;
+            DATE         : LocalDate;
+            DAY_NUMBER   : Integer;
+            DAY_NAME     : String(10);
+            MONTH_NUMBER : Integer;
+            MONTH_NAME   : String(10);
+            YEAR         : String(10);
+    };
+};

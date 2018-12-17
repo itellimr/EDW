@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="EDW.EDW_CLEANSE.MODEL::CV_CLN_SALES" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
+<descriptions defaultDescription="CV_CLN_SALES"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EDW.EDW_CLEANSE.SYNONYMS::TBL_SALES">
+    <resourceUri>EDW.EDW_CLEANSE.SYNONYMS::TBL_SALES</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews/>
+<logicalModel id="EDW.EDW_CLEANSE.SYNONYMS::TBL_SALES">
+  <attributes>
+    <attribute id="DATE_ID" order="1" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DATE_ID"/>
+      <keyMapping columnObjectName="TBL_SALES" columnName="DATE_ID"/>
+    </attribute>
+    <attribute id="PRODUCT_ID" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PRODUCT_ID"/>
+      <keyMapping columnObjectName="TBL_SALES" columnName="PRODUCT_ID"/>
+    </attribute>
+    <attribute id="CUSTOMER_ID" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CUSTOMER_ID"/>
+      <keyMapping columnObjectName="TBL_SALES" columnName="CUSTOMER_ID"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures>
+    <measure id="SALES_VALUE" order="4" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="SALES_VALUE"/>
+      <measureMapping columnObjectName="TBL_SALES" columnName="SALES_VALUE"/>
+    </measure>
+    <measure id="SALES_QTY" order="5" aggregationType="sum" measureType="simple">
+      <descriptions defaultDescription="SALES_QTY"/>
+      <measureMapping columnObjectName="TBL_SALES" columnName="SALES_QTY"/>
+    </measure>
+  </baseMeasures>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+  <localDimensions/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="82" y="105"/>
+    
+      <rectangleSize width="140"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

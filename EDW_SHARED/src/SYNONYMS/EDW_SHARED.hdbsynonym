@@ -1,0 +1,20 @@
+{
+  "EDW.EDW_SHARED.SYNONYMS::CLEANSE_CV_CLN_DATE": {
+    "target": {
+      "object": "EDW.EDW_CLEANSE.MODEL::CV_CLN_DATE",
+      "schema": "EDW_HDI_EDW_CLEANSE_1"
+    }
+  },
+  "EDW.EDW_SHARED.SYNONYMS::CLEANSE_CV_CLN_PRODUCT": {
+    "target": {
+      "object": "EDW.EDW_CLEANSE.MODEL::CV_CLN_PRODUCT",
+      "schema": "EDW_HDI_EDW_CLEANSE_1"
+    }
+  },
+  "EDW.EDW_SHARED.SYNONYMS::CLEANSE_CV_CLN_CUSTOMER": {
+    "target": {
+      "object": "EDW.EDW_CLEANSE.MODEL::CV_CLN_CUSTOMER",
+      "schema": "EDW_HDI_EDW_CLEANSE_1"
+    }
+  }
+}

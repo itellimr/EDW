@@ -1,0 +1,13 @@
+namespace EDW.EDW_STAGE.TABLES;
+
+context SALES {
+
+    /*@@layout{"layoutInfo":{"x":-521,"y":-228.5}}*/
+    entity TBL_SALES {
+        key DATE_ID     : Integer;
+        key PRODUCT_ID  : String(10);
+        key CUSTOMER_ID : String(10);
+            SALES_VALUE : Integer;
+            SALES_QTY   : Integer;
+    };
+};

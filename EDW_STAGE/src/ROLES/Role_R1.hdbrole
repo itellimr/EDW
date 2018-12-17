@@ -1,0 +1,27 @@
+{ 
+  "role": { 
+    "name": "EDW.EDW_STAGE.ROLES::Role_R1", 
+    "object_privileges": [ 
+      { 
+        "name":"EDW.EDW_STAGE.DATA::STAGE.PRODUCT", 
+        "type":"TABLE", 
+        "privileges":[ "SELECT" ] 
+      },
+      { 
+        "name":"EDW.EDW_STAGE.DATA::STAGE.CUSTOMER", 
+        "type":"TABLE", 
+        "privileges":[ "SELECT" ] 
+      },
+      { 
+        "name":"EDW.EDW_STAGE.DATA::STAGE.DATE", 
+        "type":"TABLE", 
+        "privileges":[ "SELECT" ] 
+      },
+            { 
+        "name":"EDW.EDW_STAGE.TABLES::SALES.TBL_SALES", 
+        "type":"TABLE", 
+        "privileges":[ "SELECT" ] 
+      }
+    ]
+  }
+} 

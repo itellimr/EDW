@@ -1,0 +1,26 @@
+{
+  "EDW.EDW_DM_SALES.SYNONYMS::SHARED_CV_SHARED_DIM_DATE": {
+    "target": {
+      "object": "EDW.EDW_SHARED.MODEL::CV_SHARED_DIM_DATE",
+      "schema": "EDW_HDI_EDW_SHARED_1"
+    }
+  },
+  "EDW.EDW_DM_SALES.SYNONYMS::SHARED_CV_SHARED_DIM_PRODUCT": {
+    "target": {
+      "object": "EDW.EDW_SHARED.MODEL::CV_SHARED_DIM_PRODUCT",
+      "schema": "EDW_HDI_EDW_SHARED_1"
+    }
+  },
+  "EDW.EDW_DM_SALES.SYNONYMS::SHARED_CV_SHARED_DIM_CUSTOMER": {
+    "target": {
+      "object": "EDW.EDW_SHARED.MODEL::CV_SHARED_DIM_CUSTOMER",
+      "schema": "EDW_HDI_EDW_SHARED_1"
+    }
+  },
+  "EDW.EDW_DM_SALES.SYNONYMS::CLEANSE_CV_CLN_SALES": {
+    "target": {
+      "object": "EDW.EDW_CLEANSE.MODEL::CV_CLN_SALES",
+      "schema": "EDW_HDI_EDW_CLEANSE_1"
+    }
+  }
+}

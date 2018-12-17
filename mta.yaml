@@ -1,0 +1,111 @@
+ID: EDW
+_schema-version: '2.0'
+version: 0.0.1
+modules:
+  - name: EDW_STAGE
+    type: hdb
+    path: EDW_STAGE
+    requires:
+      - name: hdi_EDW_STAGE
+
+  - name: EDW_CLEANSE
+    type: hdb
+    path: EDW_CLEANSE
+    requires:
+      - name: hdi_EDW_CLEANSE
+        properties:
+          TARGET_CONTAINER: '~{hdi-container-name_2}'
+          
+      - name: consumed-core-container
+        group: SERVICE_REPLACEMENTS
+        properties:
+          key: consumed-db-EDW_STAGE
+          service: '~{consumed-service-name}'
+
+      - name: cross-container-service-1
+        group: SERVICE_REPLACEMENTS
+        properties:
+          key: ServiceName_1
+          service: ~{the-service-name}
+                            
+
+  - name: EDW_SHARED
+    type: hdb
+    path: EDW_SHARED
+    requires:
+     - name: hdi_EDW_SHARED
+       properties:
+         TARGET_CONTAINER: ~{hdi-container-name_3}
+     - name: cross-container-service-2
+       group: SERVICE_REPLACEMENTS
+       properties:
+         key: consumed-db-EDW_CLEANSE
+         service: ~{the-service-name}
+                           
+
+  - name: EDW_DM_SALES
+    type: hdb
+    path: EDW_DM_SALES
+    requires:
+     - name: hdi_EDW_DM_SALES
+       properties:
+         TARGET_CONTAINER: ~{hdi-container-name_4}
+     - name: cross-container-service-2
+       group: SERVICE_REPLACEMENTS
+       properties:
+         key: consumed-db-EDW_CLEANSE
+         service: ~{the-service-name}
+     - name: cross-container-service-3
+       group: SERVICE_REPLACEMENTS
+       properties:
+         key: consumed-db-EDW_SHARED
+         service: ~{the-service-name}
+                           
+
+
+resources:
+  - name: hdi_EDW_STAGE
+    properties:
+      hdi-container-name: '${service-name}'
+    type: com.sap.xs.hdi-container
+  - name: hdi_EDW_CLEANSE
+    properties:
+      hdi-container-name_2: '${service-name}'
+    type: com.sap.xs.hdi-container
+  - name: hdi_EDW_SHARED
+    properties:
+       hdi-container-name_3: ${service-name}
+    type: com.sap.xs.hdi-container
+  - name: hdi_EDW_DM_SALES
+    properties:
+       hdi-container-name_4: ${service-name}
+    type: com.sap.xs.hdi-container
+
+  - name: consumed-core-container
+    type: org.cloudfoundry.existing-service
+    parameters:
+      service-name: XSA_ADMIN-o9axjrfz7pf6jdzv-EDW-hdi_EDW_STAGE
+    properties:
+      consumed-service-name: '${service-name}'
+
+  - name: cross-container-service-1
+    parameters:
+       service-name: XSA_ADMIN-o9axjrfz7pf6jdzv-EDW-hdi_EDW_STAGE
+    properties:
+       the-service-name: ${service-name}
+    type: org.cloudfoundry.existing-service
+
+  - name: cross-container-service-2
+    parameters:
+       service-name: XSA_ADMIN-o9axjrfz7pf6jdzv-EDW-hdi_EDW_CLEANSE
+    properties:
+       the-service-name: ${service-name}
+    type: org.cloudfoundry.existing-service
+
+  - name: cross-container-service-3
+    parameters:
+       service-name: XSA_ADMIN-o9axjrfz7pf6jdzv-EDW-hdi_EDW_SHARED
+    properties:
+       the-service-name: ${service-name}
+    type: org.cloudfoundry.existing-service
+

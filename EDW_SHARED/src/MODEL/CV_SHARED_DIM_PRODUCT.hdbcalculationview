@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" xmlns:Dimension="http://www.sap.com/ndb/BiModelDimension.ecore" id="EDW.EDW_SHARED.MODEL::CV_SHARED_DIM_PRODUCT" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
+<descriptions defaultDescription="CV_SHARED_DIM_PRODUCT"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="EDW.EDW_SHARED.SYNONYMS::CLEANSE_CV_CLN_PRODUCT">
+    <resourceUri>EDW.EDW_SHARED.SYNONYMS::CLEANSE_CV_CLN_PRODUCT</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews/>
+<inlineHierarchy xsi:type="Dimension:LeveledHierarchy" id="PRODUCT_HIERARCHY" aggregateAllNodes="true" orphanedNodesHandling="ROOT_NODES" rootNodeVisibility="ADD_ROOT_NODE" withRootNode="true" nodeStyle="LEVEL_NAME_ENFORCED" cacheEnabled="true" cycleHandling="BREAKUP" emptyValueIsNull="true">
+  <descriptions defaultDescription="PRODUCT_HIERARCHY"/>
+  <unassignedMemberProperties mode="FALSE"/>
+  <levels>
+    <level levelAttribute="PRODUCT_CATEGORY" levelType="MDLEVEL_TYPE_REGULAR" order="1" orderAttribute="PRODUCT_CATEGORY" sortDirection="ASC"/>
+    <level levelAttribute="PRODUCT_GROUP" levelType="MDLEVEL_TYPE_REGULAR" order="2" orderAttribute="PRODUCT_GROUP" sortDirection="ASC"/>
+    <level levelAttribute="PRODUCT_NAME" levelType="MDLEVEL_TYPE_REGULAR" order="3" orderAttribute="PRODUCT_NAME" sortDirection="ASC"/>
+  </levels>
+</inlineHierarchy>
+<logicalModel id="EDW.EDW_SHARED.SYNONYMS::CLEANSE_CV_CLN_PRODUCT">
+  <attributes>
+    <attribute id="PRODUCT_ID" order="1" descriptionColumnName="PRODUCT_ID" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PRODUCT_ID"/>
+      <keyMapping columnObjectName="CLEANSE_CV_CLN_PRODUCT" columnName="PRODUCT_ID"/>
+    </attribute>
+    <attribute id="PRODUCT_NAME" order="2" descriptionColumnName="PRODUCT_NAME" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PRODUCT_NAME"/>
+      <keyMapping columnObjectName="CLEANSE_CV_CLN_PRODUCT" columnName="PRODUCT_NAME"/>
+    </attribute>
+    <attribute id="PRODUCT_GROUP" order="3" descriptionColumnName="PRODUCT_GROUP" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PRODUCT_GROUP"/>
+      <keyMapping columnObjectName="CLEANSE_CV_CLN_PRODUCT" columnName="PRODUCT_GROUP"/>
+    </attribute>
+    <attribute id="PRODUCT_CATEGORY" order="4" descriptionColumnName="PRODUCT_CATEGORY" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PRODUCT_CATEGORY"/>
+      <keyMapping columnObjectName="CLEANSE_CV_CLN_PRODUCT" columnName="PRODUCT_CATEGORY"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>
